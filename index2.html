@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .nmss{
+        background-color: aqua;
+    }
+</style>
+<body onload="carga()">
+    
+    <p class="nmms">
+        <span id="horas" style="color: aqua;">0</span>:<span id="minutos" style="color:red">00</span>:<span id="segundos" style="color: green;">00</span>
+    </p>
+    <div class="nmms">
+        a;slkdjfl;askdjf
+    </div>
+</body>
+<script>
+    function carga(){
+        let contador_m = 0
+        let contador_s = 0
+        let contador_h = 0
+        m = document.getElementById("minutos")
+        s = document.getElementById("segundos")
+        h = document.getElementById("horas")
+        window.setInterval(() => {
+           if(contador_s == 60){
+                contador_s = 1
+                contador_m++
+            }else if( contador_m == 60){
+                contador_m = 0
+                contador_h++
+            }else if(contador_h == 24){
+                contador_h = 0
+                contador_m = 0
+                contador_s = 0
+            }
+            s.innerHTML = contador_s
+            m.innerHTML = contador_m
+            h.innerHTML = contador_h
+
+            contador_s++
+
+        }, 100);
+
+    }
+</script>
+
+</html>
